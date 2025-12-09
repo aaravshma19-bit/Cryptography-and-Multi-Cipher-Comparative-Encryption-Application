@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classical Cipher Comparison Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Classical Cipher Comparison Tool</h1>
+        
+        <div class="input-section">
+            <div class="input-group">
+                <label for="message">Message:</label>
+                <textarea id="message" rows="3" placeholder="Enter your message here..."></textarea>
+            </div>
+            
+            <div class="keys-grid">
+                <div class="input-group">
+                    <label for="caesarKey">Caesar Shift:</label>
+                    <input type="number" id="caesarKey" value="3" min="1" max="25">
+                </div>
+                
+                <div class="input-group">
+                    <label for="vigenereKey">Vigenère Key:</label>
+                    <input type="text" id="vigenereKey" value="KEY" placeholder="e.g., KEY">
+                </div>
+                
+                <div class="input-group">
+                    <label for="substitutionKey">Substitution Key:</label>
+                    <input type="text" id="substitutionKey" value="QWERTYUIOPASDFGHJKLZXCVBNM" placeholder="26 unique letters">
+                </div>
+                
+                <div class="input-group">
+                    <label for="columnarKey">Columnar Key:</label>
+                    <input type="text" id="columnarKey" value="CIPHER" placeholder="e.g., CIPHER">
+                </div>
+            </div>
+            
+            <button id="encryptBtn" class="btn-primary">Encrypt All</button>
+        </div>
+
+        <div id="results" class="results-section" style="display: none;">
+            <h2>Comparison Results</h2>
+            <div class="table-container">
+                <table id="resultsTable">
+                    <thead>
+                        <tr>
+                            <th>Cipher</th>
+                            <th>Encrypted Text</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsBody"></tbody>
+                </table>
+            </div>
+
+            <h3>Pattern Analysis</h3>
+            <div class="table-container">
+                <table id="analysisTable">
+                    <thead>
+                        <tr>
+                            <th>Cipher</th>
+                            <th>Length</th>
+                            <th>Repeated Letters</th>
+                            <th>Vowels</th>
+                            <th>Top 3 Letters</th>
+                        </tr>
+                    </thead>
+                    <tbody id="analysisBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="decryptSection" class="decrypt-section" style="display: none;">
+            <h3>Decryption Result</h3>
+            <div class="decrypt-result">
+                <strong id="decryptCipher"></strong>
+                <p id="decryptText"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="ciphers.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
